@@ -49,5 +49,5 @@ jobs:
     - name: Upload lock file
       uses: actions/upload-artifact@v3
       with:
-        name: scikit-hep-requirements.lock
+        name: scikit-hep
         path: ${{ matrix.python-version}}-scikit-hep-requirements.lock
