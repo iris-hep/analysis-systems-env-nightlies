@@ -6,3 +6,5 @@ awkward  # versions controlled through uproot
 vector  # versions controlled through fastjet
 iminuit  # versions controlled through cabinetry
 pyhf  # versions controlled through cabinetry
+# extras
+numba
