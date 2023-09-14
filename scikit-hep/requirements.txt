@@ -1,0 +1,8 @@
+uproot>=5.0.0
+hist[plot]>=2.7.0
+fastjet>=3.4.0.0
+cabinetry>=0.5.2
+awkward  # versions controlled through uproot
+vector  # versions controlled through fastjet
+iminuit  # versions controlled through cabinetry
+pyhf  # versions controlled through cabinetry
