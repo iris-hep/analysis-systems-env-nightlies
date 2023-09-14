@@ -27,8 +27,8 @@ jobs:
     - name: Ask for environment
       run: env
 
-    - name: Check job id
-      run: echo ${{ job.id }}
+    - name: Check job
+      run: echo ${{ jobs.scikit-hep.name }}
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
