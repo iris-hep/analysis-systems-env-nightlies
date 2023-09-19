@@ -19,6 +19,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Needed for micromamba pickup
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   scikit-hep:
 
