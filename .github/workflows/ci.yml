@@ -32,7 +32,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.11']
+        python-version: ['3.8', '3.11']
     if: >-
       github.event_name != 'push'
       || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -59,12 +59,6 @@ jobs:
           --output-file requirements.lock \
           scikit-hep/${{ matrix.python-version }}/requirements.txt
 
-    - name: Upload lock file
-      uses: actions/upload-artifact@v3
-      with:
-        name: scikit-hep-${{ matrix.python-version }}
-        path: requirements.lock
-
     - name: Install micromamba and conda-lock
       uses: mamba-org/setup-micromamba@v1
       with:
@@ -79,11 +73,13 @@ jobs:
             --file scikit-hep/${{ matrix.python-version }}/environment.yml \
             --lockfile conda-lock.yml
 
-    - name: Upload conda-lock lock file
+    - name: Upload lock files
       uses: actions/upload-artifact@v3
       with:
-        name: scikit-hep-${{ matrix.python-version }}-conda-lock
-        path: conda-lock.yml
+        name: scikit-hep-${{ matrix.python-version }}
+        path: |
+          requirements.lock
+          conda-lock.yml
 
   deploy:
     environment:
@@ -106,12 +102,12 @@ jobs:
 
     - uses: actions/download-artifact@v3
       with:
-        name: scikit-hep-3.11
-        path: '_site/scikit-hep/3.11/'
+        name: scikit-hep-3.8
+        path: '_site/scikit-hep/3.8/'
 
     - uses: actions/download-artifact@v3
       with:
-        name: scikit-hep-3.11-conda-lock
+        name: scikit-hep-3.11
         path: '_site/scikit-hep/3.11/'
 
     - name: Check site structure
