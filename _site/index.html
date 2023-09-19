@@ -22,10 +22,27 @@
   To install environments from these lock files either download them from this page or direct your installer towards their url.
   </p>
 
-  Python 3.11 pip example:
+  <b>Python 3.11 pip example:</b>
 
   <p style="font-family:'Lucida Console', monospace">
   python -m pip install --upgrade --require-hashes --requirement https://iris-hep.org/analysis-system-env-nightlies/scikit-hep/3.11/requirements.lock
+  </p>
+
+
+  <b>Python 3.11 conda-lock example:</b>
+
+  <p style="font-family:'Lucida Console', monospace">
+  micromamba create --name scikit-hep --file https://iris-hep.org/analysis-system-env-nightlies/scikit-hep/3.11/conda-lock.yml
+  </p>
+
+  or
+
+  <p style="font-family:'Lucida Console', monospace">
+  # conda-lock instal doesn't work with urls
+  <br>
+  curl -sLO https://iris-hep.org/analysis-system-env-nightlies/scikit-hep/3.11/conda-lock.yml
+  <br>
+  conda-lock install --name scikit-hep conda-lock.yml
   </p>
 
   <h2>scikit-hep</h2>
@@ -38,6 +55,12 @@
       </ul>
       <ul>
           <li><a href="https://iris-hep.org/analysis-system-env-nightlies/scikit-hep/3.11/requirements.lock">requirements.lock</a></li>
+      </ul>
+      <ul>
+          <li><a href="https://iris-hep.org/analysis-system-env-nightlies/scikit-hep/3.11/environment.yml">environment.yml (high level)</a></li>
+      </ul>
+      <ul>
+          <li><a href="https://iris-hep.org/analysis-system-env-nightlies/scikit-hep/3.11/conda-lock.yml">conda-lock.yml</a></li>
       </ul>
     </li>
 

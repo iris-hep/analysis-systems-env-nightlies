@@ -19,6 +19,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Needed for micromamba pickup
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   scikit-hep:
 
@@ -60,6 +65,26 @@ jobs:
         name: scikit-hep-${{ matrix.python-version }}
         path: requirements.lock
 
+    - name: Install micromamba and conda-lock
+      uses: mamba-org/setup-micromamba@v1
+      with:
+        environment-name: conda-lock
+        create-args: >-
+          python=${{ matrix.python-version }}
+          conda-lock
+
+    - name: Build conda-lock lock file
+      run: |
+        conda-lock \
+            --file scikit-hep/${{ matrix.python-version }}/environment.yml \
+            --lockfile conda-lock.yml
+
+    - name: Upload conda-lock lock file
+      uses: actions/upload-artifact@v3
+      with:
+        name: scikit-hep-${{ matrix.python-version }}-conda-lock
+        path: conda-lock.yml
+
   deploy:
     environment:
       name: github-pages
@@ -82,6 +107,11 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: scikit-hep-3.11
+        path: '_site/scikit-hep/3.11/'
+
+    - uses: actions/download-artifact@v3
+      with:
+        name: scikit-hep-3.11-conda-lock
         path: '_site/scikit-hep/3.11/'
 
     - name: Check site structure
