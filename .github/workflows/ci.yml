@@ -45,15 +45,15 @@ jobs:
         pip-compile \
           --resolver=backtracking \
           --generate-hashes \
-          --output-file ${{ matrix.python-version}}-"${GITHUB_JOB}"-requirements.lock \
-          "${GITHUB_JOB}"/requirements.txt
+          --output-file ${{ matrix.python-version}}-scikit-hep-requirements.lock \
+          scikit-hep/requirements.txt
 
     - name: Install from lock file
       run: |
         python -m pip install \
           --upgrade \
           --require-hashes \
-          --requirement ${{ matrix.python-version}}-"${GITHUB_JOB}"-requirements.lock
+          --requirement ${{ matrix.python-version}}-scikit-hep-requirements.lock
 
     - name: List Python dependencies
       run: |
@@ -62,5 +62,5 @@ jobs:
     - name: Upload lock file
       uses: actions/upload-artifact@v3
       with:
-        name: "${GITHUB_JOB}"
-        path: ${{ matrix.python-version}}-"${GITHUB_JOB}"-requirements.lock
+        name: scikit-hep
+        path: ${{ matrix.python-version}}-scikit-hep-requirements.lock
