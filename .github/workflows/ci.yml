@@ -71,7 +71,7 @@ jobs:
     - name: Build conda-lock lock file
       run: |
         conda-lock \
-            --file scikit-hep/${{ matrix.python-version }}/environment.yaml \
+            --file scikit-hep/${{ matrix.python-version }}/environment.yml \
             --lockfile conda-lock.yml
 
     - name: Upload conda-lock lock file
