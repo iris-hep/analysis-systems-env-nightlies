@@ -44,14 +44,14 @@ jobs:
         pip-compile \
           --resolver=backtracking \
           --generate-hashes \
-          --output-file ${{ matrix.python-version}}-scikit-hep-requirements.lock \
+          --output-file scikit-hep-${{ matrix.python-version}}-requirements.lock \
           scikit-hep/requirements.txt
 
     - name: Upload lock file
       uses: actions/upload-artifact@v3
       with:
         name: scikit-hep-${{ matrix.python-version }}
-        path: ${{ matrix.python-version}}-scikit-hep-requirements.lock
+        path: requirements.lock
 
   deploy:
     environment:
@@ -62,6 +62,8 @@ jobs:
     # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
     - name: Setup Pages
       uses: actions/configure-pages@v3
@@ -75,9 +77,8 @@ jobs:
         name: scikit-hep-3.11
         path: '_site/scikit-hep/3.11/'
 
-    - name: Unpack artifacts
+    - name: Check site structure
       run: |
-        ls -lhtra _site/scikit-hep/3.11/
         tree _site
 
     - name: Fix permissions
