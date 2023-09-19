@@ -45,7 +45,7 @@ jobs:
           --resolver=backtracking \
           --generate-hashes \
           --output-file requirements.lock \
-          scikit-hep/requirements.txt
+          scikit-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Upload lock file
       uses: actions/upload-artifact@v3
@@ -70,7 +70,7 @@ jobs:
 
     - name: Create site directory structure
       run: |
-        mkdir -p _site/scikit-hep/3.11/
+        cp -r scikit-hep _site/
 
     - uses: actions/download-artifact@v3
       with:
