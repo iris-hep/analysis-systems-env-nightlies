@@ -44,7 +44,7 @@ jobs:
         pip-compile \
           --resolver=backtracking \
           --generate-hashes \
-          --output-file scikit-hep-${{ matrix.python-version}}-requirements.lock \
+          --output-file requirements.lock \
           scikit-hep/requirements.txt
 
     - name: Upload lock file
