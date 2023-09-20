@@ -155,6 +155,7 @@ jobs:
     - name: Create site directory structure
       run: |
         cp -r scikit-hep _site/
+        cp -r iris-hep _site/
 
     - uses: actions/download-artifact@v3
       with:
