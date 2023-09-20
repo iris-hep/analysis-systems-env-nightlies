@@ -1,0 +1,14 @@
+# Scikit-HEP
+uproot>=5.0.0
+hist[plot]>=2.7.0
+fastjet>=3.4.0.0
+cabinetry>=0.5.2
+awkward  # versions controlled through uproot
+vector  # versions controlled through fastjet
+iminuit  # versions controlled through cabinetry
+pyhf  # versions controlled through cabinetry
+# IRIS-HEP
+coffea>=2023.7.0rc0
+servicex>=3.0.0a4
+dask-awkward  # versions controlled through coffea
+func_adl  # versions controlled through servicex
