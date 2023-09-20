@@ -1,4 +1,4 @@
-name: scikit-hep
+name: iris-hep
 
 channels:
   - conda-forge
