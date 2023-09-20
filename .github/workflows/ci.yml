@@ -155,7 +155,7 @@ jobs:
     - name: Create site directory structure
       run: |
         mkdir _site
-        touch _site/.nojekyll
+        # Use Jekyll to convert index.md to index.html
         cp README.md _site/index.md
         cp -r scikit-hep _site/
         cp -r iris-hep _site/
