@@ -1,2 +1,2 @@
-# analysis-system-env-nightlies
+# analysis-systems-env-nightlies
 Nightly solves of the IRIS-HEP Analysis System tool environments
