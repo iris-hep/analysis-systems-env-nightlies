@@ -49,7 +49,9 @@
   <br>
   curl -sLO https://iris-hep.org/analysis-system-env-nightlies/iris-hep/3.11/conda-lock.yml
   <br>
-  conda-lock install --name iris-hep conda-lock.yml
+  # c.f. conda-lock install --help
+  <br>
+  conda-lock install --micromamba --name iris-hep conda-lock.yml
   </p>
 
   <h2>scikit-hep</h2>
