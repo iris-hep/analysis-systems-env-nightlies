@@ -1,0 +1,29 @@
+name: scikit-hep
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  # Scikit-HEP
+  - uproot>=5.0.0
+  - hist>=2.7.0
+  - mplhep>=0.2.16  # hist[plot]
+  - cabinetry>=0.5.2
+  - awkward  # versions controlled through uproot
+  - vector  # versions controlled through fastjet
+  - iminuit  # versions controlled through cabinetry
+  - pyhf  # versions controlled through cabinetry
+  # IRIS-HEP
+  - dask-awkward  # versions controlled through coffea
+  # pip dependencies
+  - pip
+  - pip:
+    - fastjet>=3.4.0.0
+    - coffea>=2023.7.0rc0
+    - servicex>=3.0.0a4
+    - func_adl  # versions controlled through servicex
+
+# conda-lock only
+platforms:
+  - linux-64
