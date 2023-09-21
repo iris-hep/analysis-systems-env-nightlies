@@ -177,6 +177,11 @@ jobs:
         name: iris-hep-3.8
         path: '_site/iris-hep/3.8/'
 
+    - name: Add deploy time in UTC to site
+      run: |
+        mkdir -p _site/metadata
+        date -u +"%Y-%m-%d %H:%M %Z" > _site/metadata/deploy-time.txt
+
     - name: Check site structure
       run: |
         tree _site
