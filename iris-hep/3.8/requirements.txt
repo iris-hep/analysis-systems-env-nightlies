@@ -11,5 +11,6 @@ pyhf  # versions controlled through cabinetry
 coffea>=2023.7.0rc0
 servicex>=3.0.0a4
 func-adl-servicex>=2.2
+xrootd>=5.6.2
 dask-awkward  # versions controlled through coffea
 func-adl  # versions controlled through servicex
