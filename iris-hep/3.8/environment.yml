@@ -20,7 +20,7 @@ dependencies:
   # pip dependencies
   - pip
   - pip:
-    - fastjet>=3.4.0.0
+    # - fastjet>=3.4.0.0  # TODO: Fix solve
     - coffea>=0.7.21
     - servicex>=2.7.0
     - func-adl-servicex>=2.2
