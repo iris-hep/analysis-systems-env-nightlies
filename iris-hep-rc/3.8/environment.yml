@@ -22,7 +22,7 @@ dependencies:
   - pip:
     - fastjet>=3.4.0.0
     - coffea>=2023.7.0rc0
-    - servicex>=2.7.0
+    - servicex>=3.0.0a6
     - func-adl-servicex>=2.2
     - func-adl  # versions controlled through servicex
 

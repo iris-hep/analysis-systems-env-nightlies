@@ -10,7 +10,7 @@ iminuit  # versions controlled through cabinetry
 pyhf  # versions controlled through cabinetry
 # IRIS-HEP
 coffea>=2023.7.0rc0
-servicex>=2.7.0
+servicex>=3.0.0a6
 func-adl-servicex>=2.2
 xrootd>=5.6.2
 dask-awkward  # versions controlled through coffea
