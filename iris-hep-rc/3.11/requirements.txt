@@ -1,3 +1,4 @@
+--pre
 # Scikit-HEP
 uproot>=5.0.0
 hist[plot]>=2.7.0
