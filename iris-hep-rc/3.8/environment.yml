@@ -1,4 +1,4 @@
-name: iris-hep
+name: iris-hep-rc
 
 channels:
   - conda-forge
