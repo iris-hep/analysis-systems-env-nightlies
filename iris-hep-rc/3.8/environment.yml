@@ -6,7 +6,7 @@ channels:
 dependencies:
   - python=3.8
   # Scikit-HEP
-  - uproot>=4.0.0  # versions controlled through coffea
+  - uproot>=5.0.0
   - hist>=2.7.0
   - mplhep>=0.2.16  # hist[plot]
   - cabinetry>=0.5.2
@@ -15,14 +15,14 @@ dependencies:
   - iminuit  # versions controlled through cabinetry
   - pyhf  # versions controlled through cabinetry
   # IRIS-HEP
-  - dask-awkward>=2022.9a1 # versions controlled through coffea, last with awkward v1
+  - dask-awkward  # versions controlled through coffea
   - xrootd>=5.6.2
   # pip dependencies
   - pip
   - pip:
-    # - fastjet>=3.4.0.0  # TODO: Fix solve
-    - coffea>=0.7.21
-    - servicex>=2.6.2
+    - fastjet>=3.4.0.0
+    - coffea>=2023.7.0rc0
+    - servicex>=3.0.0a6
     - func-adl-servicex>=2.2
     - func-adl  # versions controlled through servicex
 
