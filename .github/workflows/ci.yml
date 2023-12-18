@@ -214,32 +214,32 @@ jobs:
         cp -r iris-hep _site/
         cp -r iris-hep-rc _site/
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: scikit-hep-3.8
         path: '_site/scikit-hep/3.8/'
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: scikit-hep-3.11
         path: '_site/scikit-hep/3.11/'
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: iris-hep-3.11
         path: '_site/iris-hep/3.11/'
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: iris-hep-3.8
         path: '_site/iris-hep/3.8/'
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: iris-hep-rc-3.11
         path: '_site/iris-hep-rc/3.11/'
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: iris-hep-rc-3.8
         path: '_site/iris-hep-rc/3.8/'
