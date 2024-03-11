@@ -32,7 +32,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.8', '3.11']
+        python-version: ['3.8', '3.12']
     if: >-
       github.event_name != 'push'
       || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -91,7 +91,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.8', '3.11']
+        python-version: ['3.8', '3.12']
     if: >-
       github.event_name != 'push'
       || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -150,7 +150,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.8', '3.11']
+        python-version: ['3.8', '3.12']
     if: >-
       github.event_name != 'push'
       || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -230,13 +230,13 @@ jobs:
 
     - uses: actions/download-artifact@v3
       with:
-        name: scikit-hep-3.11
-        path: '_site/scikit-hep/3.11/'
+        name: scikit-hep-3.12
+        path: '_site/scikit-hep/3.12/'
 
     - uses: actions/download-artifact@v3
       with:
-        name: iris-hep-3.11
-        path: '_site/iris-hep/3.11/'
+        name: iris-hep-3.12
+        path: '_site/iris-hep/3.12/'
 
     - uses: actions/download-artifact@v3
       with:
@@ -245,8 +245,8 @@ jobs:
 
     - uses: actions/download-artifact@v3
       with:
-        name: iris-hep-rc-3.11
-        path: '_site/iris-hep-rc/3.11/'
+        name: iris-hep-rc-3.12
+        path: '_site/iris-hep-rc/3.12/'
 
     - uses: actions/download-artifact@v3
       with:
