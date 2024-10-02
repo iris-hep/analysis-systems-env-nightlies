@@ -9,7 +9,7 @@ dependencies:
   - uproot>=5.0.0  # versions controlled through coffea
   - hist>=2.7.0
   - mplhep>=0.3.50  # hist + plot
-  - cabinetry>=0.6.2
+  - cabinetry>=0.6.0
   - awkward  # versions controlled through uproot
   - vector  # versions controlled through fastjet
   - iminuit  # versions controlled through cabinetry
