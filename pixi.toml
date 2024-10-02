@@ -29,6 +29,7 @@ dask-awkward = ">=2024.1.0"  # versions controlled through coffea
 [feature.iris-hep.pypi-dependencies]
 func-adl-servicex = ">=2.2"
 servicex = ">=3.0.0"  # versions controlled through func-adl-servicex
+fastjet = ">=3.4.0.0"
 
 [feature.py39.dependencies]
 python = "3.9.*"
