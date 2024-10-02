@@ -31,6 +31,53 @@ func-adl-servicex = ">=2.2"
 servicex = ">=3.0.0"  # versions controlled through func-adl-servicex
 fastjet = ">=3.4.0.0"
 
+[feature.iris-hep-py38.dependencies]
+python = "3.8.*"
+# Scikit-HEP
+uproot = ">=5.0.0"  # versions controlled through coffea
+hist = ">=2.7.0"
+mplhep = ">=0.3.50"  # hist + plot
+cabinetry = ">=0.6.0"
+# coffea = ">=2024.1.0"
+# awkward = "*"  # versions controlled through uproot
+# vector = "*"  # versions controlled through fastjet
+# iminuit = "*" # versions controlled through cabinetry
+# pyhf = "*"  # versions controlled through cabinetry
+# IRIS-HEP
+func-adl = ">=3.3.0"  # versions controlled through servicex
+xrootd = ">=5.7.0"
+dask-awkward = ">=2024.1.0"  # versions controlled through coffea
+
+[feature.iris-hep-py38.pypi-dependencies]
+# coffea on conda-forge seems to be misspecified for Python 3.8
+# as only works for coffea = ">=2024.1.0,<2024.3.0"
+coffea = ">=2024.1.0"
+func-adl-servicex = ">=2.2"
+servicex = ">=3.0.0"  # versions controlled through func-adl-servicex
+fastjet = ">=3.4.0.0"
+
+[feature.iris-hep-py38-pypi.dependencies]
+python = "3.8.*"
+xrootd = ">=5.7.0"
+
+[feature.iris-hep-py38-pypi.pypi-dependencies]
+# Scikit-HEP
+uproot = ">=5.0.0"  # versions controlled through coffea
+hist = ">=2.7.0"
+mplhep = ">=0.3.50"  # hist + plot
+cabinetry = ">=0.6.0"
+coffea = ">=2024.1.0"
+# awkward = "*"  # versions controlled through uproot
+# vector = "*"  # versions controlled through fastjet
+# iminuit = "*" # versions controlled through cabinetry
+# pyhf = "*"  # versions controlled through cabinetry
+# IRIS-HEP
+func-adl = ">=3.3.0"  # versions controlled through servicex
+dask-awkward = ">=2024.1.0"  # versions controlled through coffea
+func-adl-servicex = ">=2.2"
+servicex = ">=3.0.0"  # versions controlled through func-adl-servicex
+fastjet = ">=3.4.0.0"
+
 [feature.py39.dependencies]
 python = "3.9.*"
 
@@ -77,8 +124,12 @@ pixi project export conda-explicit-spec --environment iris-hep-312 --locked --ig
 
 iris-hep = ["iris-hep"]
 
-iris-hep-39 = ["py39", "iris-hep"]
+iris-hep-py38 = ["iris-hep-py38"]
 
-iris-hep-311 = ["py311", "iris-hep"]
+iris-hep-py38-pypi = ["iris-hep-py38-pypi"]
 
-iris-hep-312 = ["py312", "iris-hep"]
+iris-hep-py39 = ["py39", "iris-hep"]
+
+iris-hep-py311 = ["py311", "iris-hep"]
+
+iris-hep-py312 = ["py312", "iris-hep"]
