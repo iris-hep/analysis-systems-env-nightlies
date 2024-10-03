@@ -8,7 +8,7 @@ dependencies:
   # Scikit-HEP
   - uproot>=4.0.0  # versions controlled through coffea
   - hist>=2.7.0
-  - mplhep>=0.2.16  # hist[plot]
+  - mplhep>=0.2.16  # hist + plot
   - cabinetry>=0.5.2
   - awkward  # versions controlled through uproot
   - vector  # versions controlled through fastjet
