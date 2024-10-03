@@ -1,4 +1,4 @@
-name: iris-hep-311
+name: iris-hep-py311
 channels:
 - conda-forge
 dependencies:
@@ -15,3 +15,4 @@ dependencies:
 - pip:
   - func-adl-servicex>=2.2
   - servicex>=3.0.0
+  - fastjet>=3.4.0.0
