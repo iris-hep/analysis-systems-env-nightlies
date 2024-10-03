@@ -56,27 +56,16 @@ func-adl-servicex = ">=2.2"
 servicex = ">=3.0.0"  # versions controlled through func-adl-servicex
 fastjet = ">=3.4.0.0"
 
-[feature.iris-hep-py38-pypi.dependencies]
-python = "3.8.*"
-xrootd = ">=5.7.0"
+[feature.iris-hep-py38.tasks]
+export-env = """
+mkdir -p iris-hep/3.8 && \
+pixi project export conda-environment --environment iris-hep-py38 iris-hep/3.8/environment.yml
+"""
 
-[feature.iris-hep-py38-pypi.pypi-dependencies]
-# Scikit-HEP
-uproot = ">=5.0.0"  # versions controlled through coffea
-hist = ">=2.7.0"
-mplhep = ">=0.3.50"  # hist + plot
-cabinetry = ">=0.6.0"
-coffea = ">=2024.1.0"
-# awkward = "*"  # versions controlled through uproot
-# vector = "*"  # versions controlled through fastjet
-# iminuit = "*" # versions controlled through cabinetry
-# pyhf = "*"  # versions controlled through cabinetry
-# IRIS-HEP
-func-adl = ">=3.3.0"  # versions controlled through servicex
-dask-awkward = ">=2024.1.0"  # versions controlled through coffea
-func-adl-servicex = ">=2.2"
-servicex = ">=3.0.0"  # versions controlled through func-adl-servicex
-fastjet = ">=3.4.0.0"
+export-spec = """
+mkdir -p iris-hep/3.8 && \
+pixi project export conda-explicit-spec --environment iris-hep-py38 --locked --ignore-pypi-errors iris-hep/3.8/
+"""
 
 [feature.py39.dependencies]
 python = "3.9.*"
@@ -84,12 +73,26 @@ python = "3.9.*"
 [feature.py39.tasks]
 export-env = """
 mkdir -p iris-hep/3.9 && \
-pixi project export conda-environment --environment iris-hep-39 iris-hep/3.9/environment.yml
+pixi project export conda-environment --environment iris-hep-py39 iris-hep/3.9/environment.yml
 """
 
 export-spec = """
 mkdir -p iris-hep/3.9 && \
-pixi project export conda-explicit-spec --environment iris-hep-39 --locked --ignore-pypi-errors iris-hep/3.9/
+pixi project export conda-explicit-spec --environment iris-hep-py39 --locked --ignore-pypi-errors iris-hep/3.9/
+"""
+
+[feature.py310.dependencies]
+python = "3.10.*"
+
+[feature.py310.tasks]
+export-env = """
+mkdir -p iris-hep/3.10 && \
+pixi project export conda-environment --environment iris-hep-py310 iris-hep/3.10/environment.yml
+"""
+
+export-spec = """
+mkdir -p iris-hep/3.10 && \
+pixi project export conda-explicit-spec --environment iris-hep-py310 --locked --ignore-pypi-errors iris-hep/3.10/
 """
 
 [feature.py311.dependencies]
@@ -98,12 +101,12 @@ python = "3.11.*"
 [feature.py311.tasks]
 export-env = """
 mkdir -p iris-hep/3.11 && \
-pixi project export conda-environment --environment iris-hep-311 iris-hep/3.11/environment.yml
+pixi project export conda-environment --environment iris-hep-py311 iris-hep/3.11/environment.yml
 """
 
 export-spec = """
 mkdir -p iris-hep/3.11 && \
-pixi project export conda-explicit-spec --environment iris-hep-311 --locked --ignore-pypi-errors iris-hep/3.11/
+pixi project export conda-explicit-spec --environment iris-hep-py311 --locked --ignore-pypi-errors iris-hep/3.11/
 """
 
 [feature.py312.dependencies]
@@ -112,12 +115,12 @@ python = "3.12.*"
 [feature.py312.tasks]
 export-env = """
 mkdir -p iris-hep/3.12 && \
-pixi project export conda-environment --environment iris-hep-312 iris-hep/3.12/environment.yml
+pixi project export conda-environment --environment iris-hep-py312 iris-hep/3.12/environment.yml
 """
 
 export-spec = """
 mkdir -p iris-hep/3.12 && \
-pixi project export conda-explicit-spec --environment iris-hep-312 --locked --ignore-pypi-errors iris-hep/3.12/
+pixi project export conda-explicit-spec --environment iris-hep-py312 --locked --ignore-pypi-errors iris-hep/3.12/
 """
 
 [environments]
@@ -126,9 +129,9 @@ iris-hep = ["iris-hep"]
 
 iris-hep-py38 = ["iris-hep-py38"]
 
-iris-hep-py38-pypi = ["iris-hep-py38-pypi"]
-
 iris-hep-py39 = ["py39", "iris-hep"]
+
+iris-hep-py310 = ["py310", "iris-hep"]
 
 iris-hep-py311 = ["py311", "iris-hep"]
 
