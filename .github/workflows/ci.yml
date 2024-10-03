@@ -70,7 +70,9 @@ jobs:
     - name: Build conda-lock lock file
       run: |
         conda-lock lock \
+            --micromamba \
             --platform linux-64 \
+            --kind lock \
             --file scikit-hep/${{ matrix.python-version }}/environment.yml \
             --lockfile conda-lock.yml
 
@@ -127,7 +129,9 @@ jobs:
     - name: Build conda-lock lock file
       run: |
         conda-lock lock \
+            --micromamba \
             --platform linux-64 \
+            --kind lock \
             --file iris-hep/${{ matrix.python-version }}/environment.yml \
             --lockfile conda-lock.yml
 
@@ -184,7 +188,9 @@ jobs:
     - name: Build conda-lock lock file
       run: |
         conda-lock lock \
+            --micromamba \
             --platform linux-64 \
+            --kind lock \
             --file iris-hep-rc/${{ matrix.python-version }}/environment.yml \
             --lockfile conda-lock.yml
 
