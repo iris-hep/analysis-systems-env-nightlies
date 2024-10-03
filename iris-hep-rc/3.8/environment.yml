@@ -6,25 +6,25 @@ channels:
 dependencies:
   - python=3.8
   # Scikit-HEP
-  - uproot>=5.0.0
+  - uproot>=5.0.0  # versions controlled through coffea
   - hist>=2.7.0
-  - mplhep>=0.2.16  # hist[plot]
-  - cabinetry>=0.5.2
+  - mplhep>=0.3.50  # hist + plot
+  - cabinetry>=0.6.0
   - awkward  # versions controlled through uproot
   - vector  # versions controlled through fastjet
   - iminuit  # versions controlled through cabinetry
   - pyhf  # versions controlled through cabinetry
+  - coffea>=2024.1.0
   # IRIS-HEP
-  - dask-awkward  # versions controlled through coffea
-  - xrootd>=5.6.2
+  - dask-awkward>=2024.1.0 # versions controlled through coffea, last with awkward v1
+  - xrootd>=5.7.0
+  - func-adl  # versions controlled through servicex
   # pip dependencies
   - pip
   - pip:
     - fastjet>=3.4.0.0
-    - coffea>=2023.7.0rc0
-    - servicex>=3.0.0a6
+    - servicex>=3.0.0
     - func-adl-servicex>=2.2
-    - func-adl  # versions controlled through servicex
 
 # conda-lock only
 platforms:

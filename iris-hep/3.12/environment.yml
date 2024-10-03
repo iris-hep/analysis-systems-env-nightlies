@@ -1,8 +1,8 @@
-name: iris-hep-py311
+name: iris-hep-py312
 channels:
 - conda-forge
 dependencies:
-- python 3.11.*
+- python 3.12.*
 - uproot >=5.0.0
 - hist >=2.7.0
 - mplhep >=0.3.50
