@@ -5,5 +5,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      actions:
+        patterns:
+          - "*"
     labels:
       - "github-actions"
+    reviewers:
+      - "matthewfeickert"
