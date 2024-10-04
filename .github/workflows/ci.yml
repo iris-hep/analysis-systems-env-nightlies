@@ -46,17 +46,16 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install --upgrade pip-tools
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        version: "latest"
 
     - name: Build lock file
       run: |
-        pip-compile \
-          --resolver=backtracking \
+        uv pip compile \
           --generate-hashes \
-          --output-file requirements.lock \
+          --output-file=requirements.lock \
           scikit-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
@@ -105,17 +104,16 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install --upgrade pip-tools
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        version: "latest"
 
     - name: Build lock file
       run: |
-        pip-compile \
-          --resolver=backtracking \
+        uv pip compile \
           --generate-hashes \
-          --output-file requirements.lock \
+          --output-file=requirements.lock \
           iris-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
@@ -169,12 +167,17 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install --upgrade pip-tools
 
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        version: "latest"
+
     - name: Build lock file
       run: |
-        pip-compile \
-          --resolver=backtracking \
+        uv pip compile \
           --generate-hashes \
-          --output-file requirements.lock \
+          --prerelease=if-necessary \
+          --output-file=requirements.lock \
           iris-hep-rc/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
