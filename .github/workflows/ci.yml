@@ -55,7 +55,8 @@ jobs:
       run: |
         uv pip compile \
           --generate-hashes \
-          --output-file=requirements.lock \
+          --output-file requirements.lock \
+          --python-version ${{ matrix.python-version }} \
           scikit-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
@@ -113,7 +114,8 @@ jobs:
       run: |
         uv pip compile \
           --generate-hashes \
-          --output-file=requirements.lock \
+          --output-file requirements.lock \
+          --python-version ${{ matrix.python-version }} \
           iris-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
@@ -176,8 +178,9 @@ jobs:
       run: |
         uv pip compile \
           --generate-hashes \
-          --prerelease=if-necessary \
-          --output-file=requirements.lock \
+          --prerelease if-necessary \
+          --output-file requirements.lock \
+          --python-version ${{ matrix.python-version }} \
           iris-hep-rc/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
