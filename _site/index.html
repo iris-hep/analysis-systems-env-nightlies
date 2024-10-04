@@ -35,6 +35,19 @@
   python -m pip install --upgrade --require-hashes --requirement https://iris-hep.org/analysis-systems-env-nightlies/iris-hep/3.12/requirements.lock
   </p>
 
+  <b>Python 3.12 uv example:</b>
+
+  <p style="font-family:'Lucida Console', monospace">
+  uv pip install --require-hashes --requirement https://iris-hep.org/analysis-systems-env-nightlies/iris-hep/3.12/requirements.lock
+  </p>
+
+  or
+
+  <p style="font-family:'Lucida Console', monospace">
+  # note that uv pip sync removes any packages in the target virtual environment not in the lock file
+  <br>
+  uv pip sync --require-hashes https://iris-hep.org/analysis-systems-env-nightlies/iris-hep/3.12/requirements.lock
+  </p>
 
   <b>Python 3.12 conda-lock example:</b>
 
