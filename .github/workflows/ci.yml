@@ -60,7 +60,7 @@ jobs:
           scikit-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
-      uses: mamba-org/setup-micromamba@v1
+      uses: mamba-org/setup-micromamba@v2
       with:
         environment-name: conda-lock
         create-args: >-
@@ -119,7 +119,7 @@ jobs:
           iris-hep/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
-      uses: mamba-org/setup-micromamba@v1
+      uses: mamba-org/setup-micromamba@v2
       with:
         environment-name: conda-lock
         create-args: >-
@@ -184,7 +184,7 @@ jobs:
           iris-hep-rc/${{ matrix.python-version }}/requirements.txt
 
     - name: Install micromamba and conda-lock
-      uses: mamba-org/setup-micromamba@v1
+      uses: mamba-org/setup-micromamba@v2
       with:
         environment-name: conda-lock
         create-args: >-
