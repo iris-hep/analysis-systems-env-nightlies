@@ -77,7 +77,7 @@ jobs:
             --lockfile conda-lock.yml
 
     - name: Upload lock files
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: scikit-hep-${{ matrix.python-version }}
         path: |
@@ -136,7 +136,7 @@ jobs:
             --lockfile conda-lock.yml
 
     - name: Upload lock files
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: iris-hep-${{ matrix.python-version }}
         path: |
@@ -201,7 +201,7 @@ jobs:
             --lockfile conda-lock.yml
 
     - name: Upload lock files
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: iris-hep-rc-${{ matrix.python-version }}
         path: |
@@ -229,32 +229,32 @@ jobs:
         cp -r iris-hep _site/
         cp -r iris-hep-rc _site/
 
-    - uses: actions/download-artifact@v6
+    - uses: actions/download-artifact@v7
       with:
         name: scikit-hep-3.8
         path: '_site/scikit-hep/3.8/'
 
-    - uses: actions/download-artifact@v6
+    - uses: actions/download-artifact@v7
       with:
         name: scikit-hep-3.12
         path: '_site/scikit-hep/3.12/'
 
-    - uses: actions/download-artifact@v6
+    - uses: actions/download-artifact@v7
       with:
         name: iris-hep-3.12
         path: '_site/iris-hep/3.12/'
 
-    - uses: actions/download-artifact@v6
+    - uses: actions/download-artifact@v7
       with:
         name: iris-hep-3.8
         path: '_site/iris-hep/3.8/'
 
-    - uses: actions/download-artifact@v6
+    - uses: actions/download-artifact@v7
       with:
         name: iris-hep-rc-3.12
         path: '_site/iris-hep-rc/3.12/'
 
-    - uses: actions/download-artifact@v6
+    - uses: actions/download-artifact@v7
       with:
         name: iris-hep-rc-3.8
         path: '_site/iris-hep-rc/3.8/'
